@@ -167,7 +167,7 @@ class Stock(object):
             train_data[0].append(volume)
 
         if is_label:
-            train_data[1] = self.gen_label(hist_data)
+            train_data[1] = self.gen_label(hist_data, min_change_ratio=0.02)
         else:
             train_data[1] = self.gen_target(hist_data)
         train_data = np.asarray(train_data)
